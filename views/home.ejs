@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+<body>
+    <!-- Body wrapper to wrap everything -->
+    <div class="body-wrapper">
+        <h1><span class="heading-todo">TODO</span><span class="heading-app"> APP</span></h1>
+
+<!-- form to create new todo list -->
+        <form action="/create_todo" method="POST">
+            <!-- input for task -->
+            <input class="task-input"type="text" placeholder="Task" name="task">
+            <div class="category-date-wrapper">
+                <input class="category-input" list="browsers" placeholder="Category" name="category">
+                <!--category list to select  -->
+                <datalist id="browsers">
+                <option value="Home">
+                <option value="Work">
+                <option value="Personal">
+                <option value="Others">
+                </datalist>
+                <!-- input for date -->
+                <input type="text" class="date-input" placeholder="Date(dd/mm/yy)" onfocus="(this.type='date')" onblur="(this.type='text')" name="date"> 
+            </div>
+
+            <!-- Button and button wrapper -->
+            <div class="button-progress-wrapper">
+                <div class="button-wrapper">
+                    <button type="submit" class="add-btn">Add Task</button>
+                </div>
+            </div>
+        </form>   
+        <!-- Delete button and form to delete -->
+        <form action="/delete-task" method="GET">
+        <input class="del-btn" type="submit" value="Delete Tasks"/>
+        <hr>  
+
+        <!-- todo task list container -->
+        <div class="task-list-container"> 
+            
+            <ul>
+
+                <% for(let i of tast_list){%>
+                    <li>
+                        <div class="task-list-wrapper">
+                        
+                            <div class="check-task-wrapper">
+                                
+                                <!-- checkbox wrapper and checkbox to delete tasks -->
+                                <div class="check-button-wrapper">
+                                    <input type="checkbox" class="custom-control-input" name="id" value="<%=i._id%>">
+                                </div>
+                                <div class="task_details">
+                                    <p class="task-text"><%=i.task  %> </p>
+                                    <caption class="date-text"><%= correct_date %> </caption>
+                                </div>
+                            </div>
+
+                            <div class="category-div <%=i.category %>">
+                                <h4><%=i.category%></h4>
+                            </div>
+                        </div>
+
+                        <hr>
+                    </li>
+    
+                <%} %> 
+            
+
+                
+            </ul> 
+        </form>
+            
+        </div>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>

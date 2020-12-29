@@ -1,0 +1,300 @@
+/* Global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background-color: rgb(22, 22, 22);
+    --todo-heading-grad: linear-gradient(90.15deg, #F75D81 -1.85%, #7380F2 99.88%);
+    --app-heading-grad: linear-gradient(90.15deg, #5239FF -1.85%, #9EFBCE 99.88%);
+    --input-background: #595B6B;
+    --input-text-clr: #E5E5E8;
+    --add-button-clr: #00CD69;
+    --del-btn-clr: #FF4444;
+
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+html{
+    font-family: 'poppins', sans-serif;
+    font-size: 9px;
+}
+
+
+/* Heading fonts size */
+h1{
+    font-size: 6.4rem;
+    margin: 14px 0;
+}
+
+h2{
+    font-size: 2.4rem;
+}
+
+h3{
+    font-size: 1.87rem;
+}
+
+h4{
+    font-size: 1.6rem;
+}
+
+h5{
+    font-size: 1.32rem;
+}
+
+h6{
+    font-size: 1.2rem;
+}
+
+
+
+
+.body-wrapper{
+    position: relative;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.heading-todo{
+    background: var(--todo-heading-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.heading-app{
+    background: var(--app-heading-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+/* form */
+form{
+    width: 80%;
+}
+
+
+
+input{
+    background: var(--input-background);
+    height: 41px;
+    outline: none;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0px 2px 8px rgba(89, 91, 107, 0.25);
+    color: var(--input-text-clr);
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+}
+input[type="checkbox"]{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+/* setting placeholder color */
+input::placeholder{
+    color: var(--input-text-clr);
+    font-family: 'poppins', sans-serif;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--input-text-clr);
+    font-family: 'poppins', sans-serif;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--input-text-clr);
+    font-family: 'poppins', sans-serif;
+}
+.task-input{
+    width: 100%;
+
+}
+
+
+.category-date-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-input{
+    width: 48%;
+}
+.date-input{
+    width: 48%;
+}
+
+/* Buttons */
+button{
+    width: 102px;
+    height: 33px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.button-progress-wrapper{
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.button-wrapper{
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+.add-btn{
+    background-color: var(--add-button-clr);
+    box-shadow: 0px 2px 8px rgba(0, 205, 105, 0.25);
+}
+.del-btn{
+    width: 102px;
+    height: 33px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: var(--del-btn-clr);
+    box-shadow: 0px 2px 8px rgba(255, 68, 68, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+
+.Home{
+    background-color: #9EFBCE;
+}
+.Work{
+    background-color: #5239FF;
+}
+.Personal{
+    background-color: #F95D80;
+}
+.Others{
+    background-color: #7380F2;
+}
+
+
+.progress-wrapper{
+    width: 48%;
+}
+.percentage-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.progress-bar{
+    position: absolute;
+    width: 223px;
+    height: 3px;
+    background: #B6B6BD;
+    border-radius: 10px 0px;
+    margin-top: 5px;
+}
+.progress-bar-filler{
+    height: 100%;
+    width: 75%;
+    background: #00CD69;
+    box-shadow: 0px 0px 7px #00CD69;
+    border-radius: 10px 0px;
+}
+
+hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin: auto;
+    outline: none;
+    
+}
+
+ul {
+    list-style-type: none;
+}
+.task-list-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+/* li{
+    width: 100%;
+} */
+.check-button-wrapper a{
+    color: var(--input-text-clr);
+    fill: transparent;
+}
+.task_details{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 30px;
+    /* width: 20%; */
+    color: var(--input-text-clr);
+    
+}
+.task_details p{
+    font-size: 1.5rem;
+}
+.task-text{
+    font-size: 1rem;
+}
+.date-text{
+    font-size: 0.5rem;
+}
+.task-list-container{
+    width: 100%;
+    margin: auto;
+}
+.check-task-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+.category-div{
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+}
+.category-div h3{
+    color: black;
+}
+/* caption{
+    margin-top: 10px;
+} */
+.custom-control-input{
+    box-shadow: none;
+}
+
+
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    .body-wrapper{
+        width: 90%;
+    }
+}
+
